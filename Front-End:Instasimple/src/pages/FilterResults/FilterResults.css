@@ -1,0 +1,12 @@
+.filter-results-header {
+    padding: 0 0 0 0.5rem;
+    border-bottom: solid thin var(--dark-border);
+    display: flex;
+    flex-direction: row;
+    height: 4vh;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 550px;
+    background-color: var(--light-background);
+}

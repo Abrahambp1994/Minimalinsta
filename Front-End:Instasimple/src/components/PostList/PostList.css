@@ -1,0 +1,16 @@
+.post-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 4vh;
+  }
+  
+  .post-list li {
+    width: 100%;
+    border-bottom: dashed thin var(--dark-border);
+    list-style-type: none;
+  }
+
+  .post-list li:last-child {
+    border-bottom: none;
+  }

@@ -1,0 +1,29 @@
+.filter-posts-form {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    align-items: center;
+    background-color: var(--light-background);
+    height: 3.5vh;
+}
+
+.filter-posts-form #search {
+    width: 100%;
+    border: none;
+    background-color: var(--light-background);
+    flex-grow: 2;
+    font-size: inherit;
+    height: 3.5vh;
+    padding-left: 0.25rem;
+}
+
+.filter-posts-form button {
+    padding: 0 0.5rem;
+    height: 4vh;
+    flex-grow: 1;
+    border: none;
+    background-color: var(--accent-blue);
+    color: #f1f1f1;
+    font-size: inherit;
+    cursor: pointer;
+}

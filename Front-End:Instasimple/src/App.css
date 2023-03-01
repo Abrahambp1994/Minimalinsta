@@ -1,0 +1,184 @@
+/* APLICACIÓN PRINCIPAL */
+
+.App {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light-background);
+  font-size: 0.9rem;
+  width: 550px;
+}
+
+/* HEADER & FOOTER */
+
+Header, .footer {
+  background-color: var(--light-background);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 8vh;
+  position: fixed;
+  width: 550px;
+}
+
+Header { font-size: inherit; padding: 0 0.75rem; justify-content: space-between; border-bottom: solid thin var(--dark-border); }
+.footer { justify-content: space-around; bottom: 0; border-top: solid thin var(--dark-border); }
+
+@media (max-width: 550px) {
+  .App, Header, .footer {
+    width: 100vw;
+  }
+}
+
+/* PAGES: PUBLIC FEED, FILTER RESULTS, USER PROFILE, MY PROFILE */
+  
+.public-feed, .filter-results, .user-profile, .my-profile {
+  margin-top: 8vh;
+  margin-bottom: 8vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* PAGE: LOGIN USER */
+
+.login-user{
+  margin-top:8vh;
+  margin-bottom: 8vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* OTHERS */
+
+.page-text-header {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* SVG STYLES */
+
+.islike {
+  width: 32px;
+  height: 32px;
+  fill:red;
+  fill-rule: evenodd;
+  stroke-width: 2px;
+  cursor: pointer;
+
+}
+.unlike {
+  width: 32px;
+  height: 32px;
+  fill:black;
+  fill-rule: evenodd;
+  stroke: black;
+  stroke-width: 2px;
+  cursor: pointer;
+
+}
+
+.home {
+  width: 30px;
+  height: 30px;
+  fill:black;
+  fill-rule: evenodd;
+  stroke: black;
+  stroke-width: 3px;
+
+}
+
+.profile {
+  width: 30px;
+  height: 30px;
+  fill:black;
+  fill-rule: evenodd;
+  stroke: black;
+  stroke-width: 3px;
+
+}
+
+.addpost {
+  width: 30px;
+  height: 30px;
+  fill:black;
+  fill-rule: evenodd;
+  stroke: black;
+  stroke-width: 3px;
+
+}
+
+.searchpost {
+  width: 30px;
+  height: 30px;
+  fill:black;
+  fill-rule: evenodd;
+  stroke: black;
+  stroke-width: 9px;
+
+}
+
+/*DARK MODE BUTTON*/
+
+#dark-mode{
+  background-color: #1c1c1e;
+  color: #fcfcfc;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+
+}
+#light-mode{
+  background-color: #fcfcfc;
+  color: #1c1c1e;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+.switcher {
+  display: inline-block;
+  position: absolute;
+  width: 60px;
+  height: 34px;
+  top:0;
+  margin-left: 15rem;
+  cursor: pointer;
+
+
+}
+
+.switcher input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #414141;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
