@@ -3,11 +3,9 @@ const { postIdSchema } = require("../../schema/posts");
 
 const getSinglePost = async (req, res, next) => {
   try {
-    await postIdSchema.validateAsync(req.query);
-
     const { id } = req.params;
-    const post = await selectPostById(id);
-
+    await postIdSchema.validateAsync(id);
+    const post = await selectPostById(id, req.auth);
     res.send({
       status: "ok",
       data: post,

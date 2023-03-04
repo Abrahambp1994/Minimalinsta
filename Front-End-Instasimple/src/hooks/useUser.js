@@ -5,6 +5,8 @@ import { getUserDataService } from "../services";
 export const useUser = (id) => {
   const { token } = useContext(AuthContext);
   const [user, setUser] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   const setPosts = (posts) => {
     setUser({
@@ -15,12 +17,19 @@ export const useUser = (id) => {
 
   useEffect(() => {
     const loadUser = async () => {
-      const data = await getUserDataService(id, token);
-      setUser(data);
+      try {
+        setLoading(true);
+        const data = await getUserDataService(id, token);
+        setUser(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
     };
 
     loadUser();
-  }, [id]);
+  }, [id, token]);
 
-  return { user, setPosts };
+  return { user, setPosts, error, loading };
 };

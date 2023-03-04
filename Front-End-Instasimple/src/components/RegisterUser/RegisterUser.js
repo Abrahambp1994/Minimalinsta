@@ -1,10 +1,9 @@
-import "./RegisterUser.css";
-
 import { useState } from "react";
-import { registerUserService } from "../../services/index";
 import { NavLink, useNavigate } from "react-router-dom";
-import { LoginUser } from "../LoginUser/LoginUser";
+import { registerUserService } from "../../services/index";
 import { useModal } from "../../context/ModalContext";
+
+import { LoginUser } from "../LoginUser/LoginUser";
 
 export const RegisterUser = () => {
   const navigate = useNavigate();
@@ -22,7 +21,6 @@ export const RegisterUser = () => {
       setError("Passwords do not match");
       return;
     }
-
     try {
       await registerUserService({ name, email, password: pass1 });
       navigate(setModal(<LoginUser />));
@@ -78,7 +76,7 @@ export const RegisterUser = () => {
 
         <button>Register</button>
 
-        {error ? <p>{error}</p> : null}
+        {error ? <p className="error-text">{error}</p> : null}
       </form>
       <div className="footer-form" onClick={() => setModal(<LoginUser />)}>
         <NavLink>Already have an account? Log in</NavLink>

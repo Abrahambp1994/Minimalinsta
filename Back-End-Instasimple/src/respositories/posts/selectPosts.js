@@ -34,7 +34,7 @@ const selectPosts = async (queryParams, user) => {
     LEFT JOIN likes L ON L.postId = P.id
     `;
   }
-  /* if (queryParams) { */
+
   let values = user ? [user.id] : [];
   let clause = "WHERE";
   for (const key in queryParams) {
@@ -46,10 +46,6 @@ const selectPosts = async (queryParams, user) => {
   sqlQuery += "GROUP BY P.id ORDER BY P.creationDate DESC";
   const [post] = await pool.query(sqlQuery, values);
   return post;
-  /* }; */
-
-  /* const [post] = await pool.query(sqlQuery);
-  return post; */
 };
 
 module.exports = selectPosts;

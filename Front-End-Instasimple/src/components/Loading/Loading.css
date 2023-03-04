@@ -1,0 +1,9 @@
+.loading {
+    align-items: center;
+    justify-content: center;
+    height: 84vh;
+}
+
+.loading p {
+    color: gray;
+}

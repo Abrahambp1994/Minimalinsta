@@ -1,11 +1,120 @@
 {
 	"info": {
-		"_postman_id": "c4bd70c7-6e42-4843-9a99-be70848db829",
+		"_postman_id": "f0f59ce2-2417-4b9e-b72e-62f0aedf9d45",
 		"name": "Instasimple",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "24931818"
+		"_exporter_id": "24930739"
 	},
 	"item": [
+		{
+			"name": "POSTS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjc3OTU4OTMxLCJleHAiOjE2ODA1NTA5MzF9.BfMEa3vKmif86ahsyRmJrmwiBxcim5nG3x7uWRjANTk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "description",
+							"value": "estados unidos",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FILTER POSTS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/?description=estados unidos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "description",
+							"value": "estados unidos"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SINGLE POST",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjc3OTU4OTMxLCJleHAiOjE2ODA1NTA5MzF9.BfMEa3vKmif86ahsyRmJrmwiBxcim5nG3x7uWRjANTk",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/post/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"post",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "USER GALLERY",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
 		{
 			"name": "LOGIN",
 			"request": {
@@ -13,8 +122,9 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcyODc1Mjc3LCJleHAiOjE2NzU0NjcyNzd9.q_WCGmtRj0fx2GyWg9SCETj51ngG2oVm9lbjxF_ebGw",
-						"type": "text"
+						"value": "Bearer",
+						"type": "text",
+						"disabled": true
 					},
 					{
 						"key": "",
@@ -25,7 +135,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"email\": \"Francisco@email.com\",\n\"password\":\"123456\"\n}\n\n\n\n",
+					"raw": "{\n\"email\": \"pilar@email.com\",\n\"password\":\"123456\"\n}\n\n\n\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -47,7 +157,7 @@
 			"response": []
 		},
 		{
-			"name": "REGISTER USERS",
+			"name": "REGISTER",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -61,13 +171,50 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/users",
+					"raw": "localhost:8080/register",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"users"
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MY USER",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjc3OTU4OTMxLCJleHAiOjE2ODA1NTA5MzF9.BfMEa3vKmif86ahsyRmJrmwiBxcim5nG3x7uWRjANTk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
 					]
 				}
 			},
@@ -80,7 +227,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNjczMDkwMzc3LCJleHAiOjE2NzU2ODIzNzd9.QgXSg0v44MPBEVbbNDXsUlpHqwXUYTGsyKKlQLLMJc4",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNjc2ODkwNTE4LCJleHAiOjE2Nzk0ODI1MTh9.n36D-P0Ry0VJEFqm7vOrNSmoUcxHBqOmGthyIPi40Oc",
 						"type": "text"
 					}
 				],
@@ -90,84 +237,23 @@
 						{
 							"key": "image",
 							"type": "file",
-							"src": "3.Formigal.jpeg"
+							"src": "/Users/fabioflorez/Downloads/Fotos InstaSimple/desde-el-avion.png"
 						},
 						{
 							"key": "description",
-							"value": "Precioso viaje esquiando en Formigal",
+							"value": "desde el avión",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "localhost:8080/posts",
+					"raw": "localhost:8080/post",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"posts"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "FEED",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/posts",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"posts"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PROFILE",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/users/",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"users",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "FILTER POSTS",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/posts?description=formigal",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"posts"
-					],
-					"query": [
-						{
-							"key": "description",
-							"value": "formigal"
-						}
+						"post"
 					]
 				}
 			},
@@ -180,19 +266,28 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNjczMDkwMzc3LCJleHAiOjE2NzU2ODIzNzd9.QgXSg0v44MPBEVbbNDXsUlpHqwXUYTGsyKKlQLLMJc4",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjc3Njk3NTkwLCJleHAiOjE2ODAyODk1OTB9.5Y57wum1XetqBSYzFxROj4VMM2yjCZlDjuxuRHdydHo",
 						"type": "text"
 					}
 				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "localhost:8080/posts/8/like",
+					"raw": "localhost:8080/posts/2/like",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"posts",
-						"8",
+						"2",
 						"like"
 					]
 				}

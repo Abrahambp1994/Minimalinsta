@@ -2,13 +2,13 @@
 
 // LIKE/DISLIKE A POST
 
-export const postLikeDislikeService = async (likeLike) => {
+export const postLikeDislikeService = async (vote) => {
   const response = await fetch(
-    `${process.env.REACT_APP_BACKEND}/posts/${likeLike.postId}/like`,
+    `${process.env.REACT_APP_BACKEND}/posts/${vote.id}/like`,
     {
       method: "POST",
       headers: {
-        Authorization: likeLike.token,
+        Authorization: vote.token,
       },
     }
   );
@@ -62,6 +62,21 @@ export const getAllService = async (searchResults, token) => {
   return json.data;
 };
 
+// GET SINGLE POSTS
+
+export const getSinglePostService = async (token, id) => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/post/${id}`, {
+    headers: {
+      Authorization: token,
+    },
+  });
+  const json = await response.json();
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+  return json.data;
+};
+
 // USER
 
 export const getUserDataService = async (id, token) => {
@@ -76,7 +91,6 @@ export const getUserDataService = async (id, token) => {
   if (!response.ok) {
     throw new Error(json.message);
   }
-
   return json.data;
 };
 

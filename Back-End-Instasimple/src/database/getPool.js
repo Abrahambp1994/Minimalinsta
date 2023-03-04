@@ -1,6 +1,5 @@
 const mysql = require("mysql2/promise");
 
-// Nos traemos los datos de la DB del .env
 const {
   DATABASE_HOST,
   DATABASE_PORT,

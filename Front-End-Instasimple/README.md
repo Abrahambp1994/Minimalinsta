@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# InstaSimple APP Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Instalar 🔥
 
-## Available Scripts
+> renombrar el .env.example a .env y rellenar con la url correcta según puerto
 
-In the project directory, you can run:
+> abierta la carpeta de frontend en VSC, comenzar instalando los node modules
+> ojo! cuidado con los módulos sharp y bcrypt, lo mismo en necesario que lo desinstales y lo reinstales
 
-### `npm start`
+```
+npm install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+> una vez instalados todos los módulos, iniciar el servidor
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+npm start
+```
 
-### `npm test`
+# Funcionalidades 💫
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> una vez la aplicación está corriendo correctamente en nuestro servidor, se pueden realizar las siguientes tareas:
 
-### `npm run build`
+**Navegar por el feed de posts de los usuarios y filtrar posts según descripción, pulsando en el icono de la lupita del footer-menu. Si queremos volver a la página principal, podemos pinchar en el icono de la casita. También podemos acceder a los posts individualmente si pinchamos encima o acceder a la galeria de los usuarios registrados pinchando en su nombre**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Registrarse como usuario a través de un name, un email y una password desde el Header de la aplicación. Una vez registrados los datos correctamente, redirige a la página de inicio de sesión**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Iniciar sesión, también desde el Header,, instroduciendo nuestro email y password, que nos devuelve un token y se almacena en el local storager del navegador para poder realizar diferente funciones**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Crear y publicar un post mediante el icono de + que se despliega en el footer menu. Para ello es obligatorio introducir una descripción y una imágen**
 
-### `npm run eject`
+**Ver nuestra galeria personal con todos los posts que vayamos subiendo, através del footer menu pinchando en el icono de la personita**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Dar o eliminar likes a cualquier publicación existente, tanto nuestra como de otros usuarios, pulsando en los iconos de corazón que aparecen junto a los posts**

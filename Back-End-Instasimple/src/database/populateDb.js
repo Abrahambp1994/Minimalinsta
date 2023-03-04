@@ -2,7 +2,6 @@ require("dotenv").config();
 const bcrypt = require("bcrypt");
 const getPool = require("./getPool");
 
-
 const populateDb = async () => {
   try {
     const pool = getPool();
@@ -15,18 +14,9 @@ const populateDb = async () => {
           "123456",
           10
         )}", "Fernando"),
-        ("pilar@email.com", "${await bcrypt.hash(
-          "123456",
-          10
-        )}", "Pilar"),
-        ("sara@email.com", "${await bcrypt.hash(
-          "123456",
-          10
-        )}", "Sara"),
-        ("antonio@email.com", "${await bcrypt.hash(
-            "123456",
-            10
-          )}", "Antonio")
+        ("pilar@email.com", "${await bcrypt.hash("123456", 10)}", "Pilar"),
+        ("sara@email.com", "${await bcrypt.hash("123456", 10)}", "Sara"),
+        ("antonio@email.com", "${await bcrypt.hash("123456", 10)}", "Antonio")
     `);
 
     console.log("Insertando datos de posts...");
@@ -41,15 +31,15 @@ const populateDb = async () => {
 
     `);
 
-    /*console.log("Insertando datos de likes...");
+    console.log("Insertando datos de likes...");
 
     await pool.query(`
         INSERT INTO likes (postId, userId) VALUES 
         (1, 2),
         (1, 3),
         (2, 1)
-    `); */
-    
+    `);
+
     console.log("¡Datos insertados! 🥳");
   } catch (error) {
     console.error(error.message);

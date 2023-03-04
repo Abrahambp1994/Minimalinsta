@@ -1,25 +1,31 @@
-import "./NewPost.css";
-
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import usePosts from "../../hooks/usePosts";
 import { sendPostService } from "../../services";
+import { useNavigate } from "react-router-dom";
+import { useModal } from "../../context/ModalContext";
 
 export const NewPost = () => {
   const { token } = useContext(AuthContext);
   const [image, setImage] = useState(null);
+  const [error, setError] = useState("");
   const { addPost } = usePosts();
+  const navigate = useNavigate();
+  const [, setModal] = useModal();
 
   const handleForm = async (e) => {
     e.preventDefault();
+
     try {
       const data = new FormData(e.target);
       const post = await sendPostService({ data, token });
       addPost(post);
       e.target.reset();
       setImage(null);
+      setModal(null);
+      navigate(`/post/${post.id}`);
     } catch (error) {
-      console.error(error.message);
+      setError(error.message);
     }
   };
 
@@ -53,6 +59,8 @@ export const NewPost = () => {
             <img src={URL.createObjectURL(image)} alt="Preview" />
           </figure>
         ) : null}
+
+        {error ? <p className="error-text">{error}</p> : null}
 
         <button>Send Post</button>
       </form>

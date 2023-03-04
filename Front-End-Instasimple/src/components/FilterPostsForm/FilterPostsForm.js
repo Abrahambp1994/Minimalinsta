@@ -4,7 +4,6 @@ export const FilterPostsForm = ({ setSearchResults }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const query = e.target.elements.search.value;
-    console.log(query);
     setSearchResults(query);
   };
 

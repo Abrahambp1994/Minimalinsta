@@ -1,5 +1,3 @@
-import "./LoginUser.css";
-
 import { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { logInUserService } from "../../services/index";
@@ -10,18 +8,17 @@ import { RegisterUser } from "../RegisterUser/RegisterUser";
 
 export const LoginUser = () => {
   const navigate = useNavigate();
-
   const { login } = useContext(AuthContext);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
   const [, setModal] = useModal(false);
 
   const handleForm = async (e) => {
     e.preventDefault();
     setModal(false);
+
     try {
       const data = await logInUserService({ email, password });
       const token = `Bearer ${data}`;
@@ -60,7 +57,7 @@ export const LoginUser = () => {
 
         <button>Log in</button>
 
-        {error ? <p>{error}</p> : null}
+        {error ? <p className="error-text">{error}</p> : null}
       </form>
       <div className="footer-form" onClick={() => setModal(<RegisterUser />)}>
         <NavLink>Create account</NavLink>

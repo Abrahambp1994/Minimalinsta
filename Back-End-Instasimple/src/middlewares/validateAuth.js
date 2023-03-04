@@ -6,14 +6,12 @@ const validateAuth = (req, res, next) => {
     const { authorization } = req.headers;
 
     if (!authorization) {
-      //generateError("Missing authorization header", 400);
       return next();
     }
 
     const [type, token] = authorization.split(" ");
 
     if (type !== "Bearer" || !token) {
-      //generateError("Invalid token format", 400);
       return next();
     }
 

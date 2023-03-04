@@ -1,5 +1,3 @@
-import "./Footer.css";
-
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
@@ -31,7 +29,7 @@ export const Footer = () => {
         </div>
       ) : null}
       {user ? (
-        <Link to={"/user"}>
+        <Link to={"/user"} user="user">
           <ProfileSvg />
         </Link>
       ) : null}

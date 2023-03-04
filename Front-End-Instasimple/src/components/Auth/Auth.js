@@ -18,7 +18,9 @@ export const Auth = () => {
         {user ? (
           <>
             <p>Hello {user.name}!</p>
-            <div onClick={() => logout()}>Logout</div>
+            <a onClick={() => logout()} href="/">
+              Logout
+            </a>
           </>
         ) : (
           <>
@@ -34,20 +36,4 @@ export const Auth = () => {
       </section>
     </>
   );
-
-  /* return user ? (
-    <section className="auth">
-      <p>Hi! {user.name}</p>
-      <button onClick={() => logout()}>Logout</button>
-    </section>
-  ) : (
-    <ul>
-      <li onClick={() => setModal(<LoginUser />)}>
-        <NavLink>Login</NavLink>
-      </li>
-      <li onClick={() => setModal(<RegisterUser />)}>
-        <NavLink>Register</NavLink>
-      </li>
-    </ul>
-  ); */
 };

@@ -1,28 +1,16 @@
-# 2-Proyecto-Hack-a-Boss
+# InstaSimple APP Backend
 
-# Quick start 🔥
+# Instalar 🔥
 
-> hacer clone del repositorio
-
-```
-git clone git@github.com:Abrahambp1994/instasimple.git
-```
-
-> abrir carpeta "instasimple" con Visual Studio
-
-```
-code ./instasimple
-```
-
-> en la terminal del VS (o cualquier terminal en la carpeta instasimple):
+> abierta la carpeta de backend en VSC, comenzar instalando los node modules
 
 ```
 npm install
 ```
 
-> renombrar el .env.example a .env y rellenad todos los campos con vuestros datos
+> renombrar el .env.example a .env y rellenar todos los campos
 
-❗ \_en DATABASE_NAME deberéis poner el nombre de una base de datos que ya tengáis creada en MySQL
+DATABASE_NAME se llamará instasimple
 
 > crear la DB
 
@@ -30,16 +18,16 @@ npm install
 npm run initDb
 ```
 
-> introducir datos de prueba en la DB
+> introducir datos de prueba en la DB (users, posts y likes)
 
 ```
 npm run populateDb
 ```
 
-> una vez hecho todo esto, solo quedaría iniciar el server
+> una vez hecho todo esto, iniciar el server
 
 ```
-node src/server.js
+node src/server.js o npm start o npm run dev
 ```
 
 # Base de datos 💾
@@ -49,76 +37,61 @@ node src/server.js
 users
 
 - id
-- email \*
-- password \*
-- name \*
+- email
+- password
+- name
 
 posts
 
 - id
-- title \*
-- description \*
-- userId \*
-- image \*
+- image
+- description
+- userId
+- creationDate
 
 likes
 
 - id
-- image \*
-- postId \*
+- userId
+- postId
 
 # API 📚
 
-//USUARIOS ANÓNIMOS
+La colección de endpoints funcionando para postman: [está aquí](./Instasimple.postman_collection.json).
 
-- GET /posts
+// USUARIOS PÚBLICOS
 
-  - Responde con las últimas fotos publicadas por otros usuarios.
+**GET /**
 
-- GET /users/:id
+- Responde con las últimas fotos publicadas por los usuarios registrados.
+- /?description= podemos realizar búsquedas filtrando por la descripción de las publicaciones mediante query.params
 
-  - Responde con el perfil del usuario con su galería de fotos
+**GET /post/:id**
 
-  - Body (form-data):
-    - title \*
-    - description \*
-    - images
-  - Responde con los datos del post creado, incluídas las imágenes
+- Responde con un único post según su id.
 
-- GET /posts
+**GET /users/:id**
 
-  - Devuelve fotos relacionadas con el texto descriptivo introducido.
+- Responde con el perfil de un usuario (que no es lo mismo que MI usuario) con su galería de fotos
 
-- POST /login
+**POST /login**
 
-  - Body (JSON):
+- Inicia sesión a través del email y la password y nos devuelve un token.
 
-    - email \*
-    - password \*
+**POST /register**
 
-    - Responde con un token para el usuario
-
-- POST /users
-
-  - Body (JSON):
-    - email \*
-    - password \*
-    - name \*
-  - Responde con los datos del usuario creado
+- Registra a cualquier usuario anónimo medante su name, email y password
 
 //USARIOS REGISTRADOS
 
-- POST /posts
+**GET /user**
 
-  - Se necesita autenticación del usuario
+- Iniciada la sesión, nos devuelve nuestra galeria de posts publicados por nosotros mismos, es decir MI perfil
 
-  - Crea una publicación introduciendo los siguientes valores en el body (form-data):
-  
-    - image \*
-      -description \*
+**POST /post**
 
-- POST /posts/:id/like
+- Iniciada la sesión, crea una publicación introduciendo una description y una foto, ambas obligatorias
 
-  - Alterna dar/quitar like al post indicado en el param "id"
+**POST /posts/:id/like**
 
-  - Responde indicando si se ha dado o quitado el like
+- Iniciada la sesión, alterna dar/quitar like al post indicado en el param "id"

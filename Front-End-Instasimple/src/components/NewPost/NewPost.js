@@ -24,7 +24,8 @@ export const NewPost = () => {
       addPost(post);
       e.target.reset();
       setImage(null);
-      navigate("/"); // navigate a single posts
+      setModal(false);
+      navigate("/");
     } catch (error) {
       console.error(error.message);
     }

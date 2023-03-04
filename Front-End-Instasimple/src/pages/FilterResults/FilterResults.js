@@ -5,10 +5,14 @@ import usePosts from "../../hooks/usePosts";
 
 import { PostList } from "../../components/PostList/PostList";
 import { FilterPostsForm } from "../../components/FilterPostsForm/FilterPostsForm";
+import { Loading } from "../../components/Loading/Loading";
 
 export const FilterResults = () => {
   const [searchResults, setSearchResults] = useState([]);
-  const { posts, setPosts } = usePosts(searchResults);
+  const { posts, setPosts, loading } = usePosts(searchResults);
+
+  if (loading) return <Loading />;
+
   return (
     <section className="filter-results">
       <div className="filter-results-header">

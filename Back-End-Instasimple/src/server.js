@@ -35,11 +35,11 @@ app.use("/uploads", express.static("./uploads"));
 
 app.use(validateAuth);
 
-// GET MY USER
-app.get("/user", isUser, myUser);
-
 // GET POSTS
 app.get("/", getPosts);
+
+// GET SINGLE POST
+app.get("/post/:id", getSinglePost);
 
 // GET USER
 app.get("/users/:id", getUserGallery);
@@ -52,14 +52,14 @@ app.post("/register", createUser);
 
 // PRIVATE ENDPOINTS
 
+// GET MY USER
+app.get("/user", isUser, myUser);
+
 // POST A PHOTO
 app.post("/post", isUser, createPost);
 
 // POST A LIKE
 app.post("/posts/:id/like", isUser, togglePostLike);
-
-// GET SINGLE POST
-app.get("/post/:id", getSinglePost);
 
 // ERROR MIDDLEWARE
 
@@ -69,5 +69,3 @@ app.use(handleError);
 app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
 });
-
-console.log();

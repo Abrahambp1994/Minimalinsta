@@ -1,6 +1,5 @@
 .post {
     width: inherit;
-    /* padding: 0.5rem 0; */
 }
 
 /* POST HEADER */  
@@ -23,7 +22,7 @@
 
 /* POST IMAGE */  
 
-.post > img {
+img#post-img {
     max-width: 100%;
 }
 
