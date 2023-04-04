@@ -1,4 +1,4 @@
-# InstaSimple APP Frontend
+# Minimalinsta APP Frontend
 
 # Instalar 🔥
 
@@ -25,7 +25,7 @@ npm start
 
 **Registrarse como usuario a través de un name, un email y una password desde el Header de la aplicación. Una vez registrados los datos correctamente, redirige a la página de inicio de sesión**
 
-**Iniciar sesión, también desde el Header,, instroduciendo nuestro email y password, que nos devuelve un token y se almacena en el local storager del navegador para poder realizar diferente funciones**
+**Iniciar sesión, también desde el Header, instroduciendo nuestro email y password, que nos devuelve un token y se almacena en el local storager del navegador para poder realizar diferente funciones**
 
 **Crear y publicar un post mediante el icono de + que se despliega en el footer menu. Para ello es obligatorio introducir una descripción y una imágen**
 

@@ -2,7 +2,7 @@ import "./Post.css";
 
 import { useContext } from "react";
 import moment from "moment";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { IsLikeSvg } from "../../assets/svg/IsLikeSvg";
 import { UnLikeSvg } from "../../assets/svg/UnLikeSvg";
@@ -15,7 +15,7 @@ export const Post = ({ post, handleLike }) => {
         <Link className="user-link" to={`/users/${post.userId}`}>
           {post.name}
         </Link>
-        <p>{moment(post.creationDate).format("MMM d, YYYY")}</p>
+        <p>{moment(post.creationDate).format("LL")}</p>
       </div>
       <Link id="post-img-link" to={`/post/${post.id}`}>
         <img

@@ -8,7 +8,7 @@ export const Header = () => {
     <header>
       <h1>
         <Link id="app-logo" to={"/"}>
-          InstaSimple
+          Minimalinsta
         </Link>
       </h1>
       <Auth />
