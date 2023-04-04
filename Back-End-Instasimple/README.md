@@ -1,4 +1,4 @@
-# InstaSimple APP Backend
+# Minimalinsta APP Backend
 
 # Instalar 🔥
 
@@ -57,7 +57,7 @@ likes
 
 # API 📚
 
-La colección de endpoints funcionando para postman: [está aquí](./Instasimple.postman_collection.json).
+La colección de endpoints funcionando para postman: [está aquí](./Minimalinsta.postman_collection.json).
 
 // USUARIOS PÚBLICOS
 
