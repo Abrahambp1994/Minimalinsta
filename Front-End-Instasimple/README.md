@@ -23,22 +23,22 @@ npm start
 
 //Navegación como invitado//
 
-**Visualizar los diferentes posts que son subidos por usuarios registrados / icono 🏠**
+**> Visualizar los diferentes posts que son subidos por usuarios registrados / icono 🏠**
 
-**Filtrar posts según descripción / icono 🔎**
+**> Filtrar posts según descripción / icono 🔎**
 
-**Acceder a los posts individualmente, pinchando encima de la imagen**
+**> Acceder a los posts individualmente, pinchando encima de la imagen**
 
-**Acceder a la galeria de usuarios registrados pinchando en su nombre**
+**> Acceder a la galeria de usuarios registrados pinchando en su nombre**
 
-**Registrarse como usuario a través de un name, un email y una password pinchando el botón "Register". Una vez registrados los datos correctamente, redirige a la página de "login"**
+**> Registrarse como usuario a través de un name, un email y una password pinchando el botón "Register". Una vez registrados los datos correctamente, redirige a la página de "login"**
 
 //Navegación como usuario registrado//
 
-**Iniciar sesión > pinchar en el botón "Login" y posteriormente introducir email y password**
+**> Iniciar sesión: pinchar en el botón "Login" y posteriormente introducir email y password**
 
-**Crear y publicar un post mediante el icono ➕. Para ello es obligatorio introducir una descripción y una imágen**
+**> Crear y publicar un post mediante el icono ➕. Para ello es obligatorio introducir una descripción y una imágen**
 
-**Ver nuestra galeria personal con nuestros posts / icono 👤**
+**> Ver nuestra galeria personal con nuestros posts / icono 👤**
 
-**Dar o eliminar likes a cualquier publicación existente / icono ❤️**
+**> Dar o eliminar likes a cualquier publicación existente / icono ❤️**
