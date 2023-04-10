@@ -21,7 +21,8 @@ npm start
 
 > una vez la aplicación está corriendo correctamente en nuestro servidor, se pueden realizar las siguientes tareas:
 
-//Navegación como invitado
+//Navegación como invitado//
+
 **Visualizar los diferentes posts que son subidos por usuarios registrados / icono 🏠**
 
 **Filtrar posts según descripción / icono 🔎**
@@ -32,7 +33,8 @@ npm start
 
 **Registrarse como usuario a través de un name, un email y una password pinchando el botón "Register". Una vez registrados los datos correctamente, redirige a la página de "login"**
 
-//Navegación como usuario registrado
+//Navegación como usuario registrado//
+
 **Iniciar sesión > pinchar en el botón "Login" y posteriormente introducir email y password**
 
 **Crear y publicar un post mediante el icono ➕. Para ello es obligatorio introducir una descripción y una imágen**
