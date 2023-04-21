@@ -10,25 +10,22 @@ const populateDb = async () => {
 
     await pool.query(`
         INSERT INTO users (email, password, name) VALUES 
-        ("fernando@email.com", "${await bcrypt.hash(
-          "123456",
-          10
-        )}", "Fernando"),
-        ("pilar@email.com", "${await bcrypt.hash("123456", 10)}", "Pilar"),
-        ("sara@email.com", "${await bcrypt.hash("123456", 10)}", "Sara"),
-        ("antonio@email.com", "${await bcrypt.hash("123456", 10)}", "Antonio")
+        ("lauren@email.com", "${await bcrypt.hash("123456", 10)}", "Lauren"),
+        ("adrian@email.com", "${await bcrypt.hash("123456", 10)}", "Adrián"),
+        ("alex@email.com", "${await bcrypt.hash("123456", 10)}", "Alex"),
+        ("sofia@email.com", "${await bcrypt.hash("123456", 10)}", "Sofía")
     `);
 
     console.log("Insertando datos de posts...");
 
     await pool.query(`
         INSERT INTO posts (image, description, userId) VALUES 
-        ("8a05d41d-0db9-451b-9d5c-99077dfb61c6.jpeg", "Preciosa casita de campo en Grand Teton, Estados Unidos", 1),
-        ("e9dbc1f2-35de-4863-93b7-860540a08fcb.jpeg", "No hay nada mejor que despertarse con estas vistas... (Appalachian Mountains, en Estados Unidos).", 2),
-        ("a153bbb2-4c41-4eda-b487-f9db4f20cf50.jpeg", "Leyendo en mi lugar favorito. North Twin Peak, Canadá.", 3),
-        ("d2849a5e-2a6d-4428-b207-bb7f4e78393b.jpeg", "Estoy completamente enamorado de este pueblito del norte de Francia! Locronan es un pueblo tan bonito y acogedor... no me quiero ir!", 4),
-        ("a6d0d122-5bbf-4edb-8c9b-350dd3b61a2b.jpeg", "Nada como despertar frente alos Alpes de Suiza. ¡Qué bello es vivir!", 4)
-
+        ("1b20de8e-28f6-497a-89ec-f6bd542396ce.jpeg", "Catedral de Saint Giles en Edimburgo, Escocia", 1),
+        ("2ea5be42-aaa4-4d5f-906e-75242fae00aa.jpeg", "Gaitero amenizando la mañana en Royal Mile, Edimburgo, Escocia", 2),
+        ("5df38dfe-5eff-401e-a07c-581a49e56905.jpeg", "Rafting por el río Dujanec, Eslovaquia", 4),
+        ("38f9d863-3220-4d5b-b3bb-2697c1facde7.jpeg", "Estatua de Alejandro Magno en frente del ayuntamiento de Edimburgo, Escocia", 3),
+        ("6057dee5-f3e1-4f18-bfd7-be139b71ea5c.jpeg", "Ovejas pastando en Highlands, Escocia", 1),
+        ("cd11f74f-38e8-4a97-ab36-d930aa2433a6.jpeg", "Galeria Victor Manuel II en Milán, Italia", 4)
     `);
 
     console.log("Insertando datos de likes...");
@@ -36,8 +33,11 @@ const populateDb = async () => {
     await pool.query(`
         INSERT INTO likes (postId, userId) VALUES 
         (1, 2),
-        (1, 3),
-        (2, 1)
+        (2, 3),
+        (3, 4),
+        (4, 4),
+        (5, 1),
+        (6, 3)
     `);
 
     console.log("¡Datos insertados! 🥳");
